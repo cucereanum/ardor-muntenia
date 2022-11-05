@@ -25,3 +25,21 @@ export const secondSectionData = [
       "Un eveniment ARDOR, care reunește în fiecare an, în București, profesorii din întreaga țară.",
   },
 ];
+
+export const thirdSectionData = [
+  {
+    title: "DialogON",
+    description:
+      "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+  },
+  {
+    title: "British Council Debate",
+    description:
+      "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+  },
+  {
+    title: "Coaching",
+    description:
+      "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+  },
+];
