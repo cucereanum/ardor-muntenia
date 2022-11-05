@@ -13,11 +13,22 @@ import Layout from "../layouts/Layout.astro";
   <Footer />
 </Layout>
 
+<script is:inline>
+  window.scrollTo(0, 0);
+</script>
+
 <style is:global>
   @font-face {
     font-family: "Poppins-Bold";
     src: url("/fonts/Poppins-Bold.ttf") format("ttf");
     font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Poppins-Medium";
+    src: url("/fonts/Poppins-Medium.ttf") format("ttf");
+    font-weight: 500;
     font-style: normal;
     font-display: swap;
   }
