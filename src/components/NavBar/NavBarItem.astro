@@ -1,0 +1,125 @@
+---
+export interface Props {
+  id: string;
+  title: string;
+  navItems?: string[];
+}
+const { id, title, navItems } = Astro.props;
+---
+
+<li class="menu-nav-item">
+  <a class="nav-item nav-item-container" id={title} href="#">
+    <h4 class="nav-item-text">{title}</h4>
+    {
+      navItems && navItems.length >= 1 ? (
+        <svg
+          class="down-arrow"
+          width="15"
+          height="8"
+          viewBox="0 0 15 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 1L7.5 7L14 1"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      ) : null
+    }
+  </a>
+  <div class="nav-item-sub-container" id={id}>
+    {
+      navItems && navItems.length >= 1
+        ? navItems.map((navItem) => (
+            <h4 class="sub-container-text">
+              <a class="" href="#">
+                {navItem}
+              </a>
+            </h4>
+          ))
+        : null
+    }
+  </div>
+</li>
+
+<script define:vars={{ id, title }} is:inline>
+  window.addEventListener("load", () => {
+    document.getElementById(title).addEventListener("click", () => {
+      if (
+        document.getElementById(id).classList[0] ===
+        "nav-item-sub-container-display"
+      ) {
+        document.getElementById(id).classList.add("nav-item-sub-container");
+        document
+          .getElementById(id)
+          .classList.remove("nav-item-sub-container-display");
+      } else {
+        document.getElementById(id).classList.remove("nav-item-sub-container");
+        document
+          .getElementById(id)
+          .classList.add("nav-item-sub-container-display");
+      }
+    });
+  });
+</script>
+
+<style is:inline>
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  .down-arrow {
+    padding-left: 0.5em;
+  }
+
+  .nav-item {
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-family: "Poppins-Bold", sans-serif;
+    padding: 0.75em 2em;
+    display: block;
+    text-decoration: none;
+  }
+  .nav-item-home {
+    background: #c4132c;
+  }
+  .nav-item-text {
+    margin: 0;
+  }
+  .nav-item-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu-nav-item .nav-item-sub-container {
+    display: none;
+    margin-bottom: 1em;
+  }
+
+  .nav-item-sub-container-display {
+    display: block;
+    margin-bottom: 1em;
+    animation: moveDown 0.5s ease-in-out forwards;
+  }
+  .sub-container-text {
+    color: #fff;
+    font-size: 1rem;
+    font-family: "Poppins-Medium";
+    margin: 0.5rem auto 0 auto;
+    padding: 0.2em 0 0.2em 3em;
+  }
+  @keyframes moveDown {
+    from {
+      transform: translateY(-20px);
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
