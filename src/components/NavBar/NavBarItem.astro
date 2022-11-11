@@ -104,7 +104,6 @@ const { id, title, navItems } = Astro.props;
   .nav-item-sub-container-display {
     display: block;
     margin-bottom: 1em;
-    animation: moveDown 0.5s ease-in-out forwards;
   }
   .sub-container-text {
     color: #fff;
@@ -112,14 +111,5 @@ const { id, title, navItems } = Astro.props;
     font-family: "Poppins-Medium";
     margin: 0.5rem auto 0 auto;
     padding: 0.2em 0 0.2em 3em;
-  }
-  @keyframes moveDown {
-    from {
-      transform: translateY(-20px);
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
   }
 </style>

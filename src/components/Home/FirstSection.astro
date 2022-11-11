@@ -113,6 +113,7 @@
     margin: auto;
     margin-top: 4em;
     width: 90%;
+    position: relative;
   }
 
   h2.heading {
@@ -135,12 +136,34 @@
     flex-direction: row;
     height: 4em;
     padding: 0.2em 1.2em;
-    margin: -1em auto 0 auto;
+    margin: 2em auto 0 auto;
     width: 15em;
   }
   h4 {
     color: #d1d2db;
     font-size: 1.1rem;
     padding-right: 0.6em;
+  }
+  @media only screen and (min-width: 680px) {
+    .box-container {
+      width: 75%;
+    }
+    .home-container {
+      background-image: url("../../images/home-section-1-tablet.png");
+    }
+    h4.subheading {
+      padding: 0 5em;
+      font-size: 1.3rem;
+    }
+    h4.description {
+      font-size: 1.2rem;
+    }
+    h2.heading {
+      color: #d1d2db;
+      font-size: 1.7rem;
+    }
+    h1 {
+      font-size: 2.6rem;
+    }
   }
 </style>
