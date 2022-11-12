@@ -167,12 +167,31 @@
         </a>
       </div>
     </div>
+    <div class="footer-info">
+      <h4 class="company">ARDOR MUNTENIA</h4>
+      <div class="footer-links">
+        <div class="footer-links-left">
+          <p>Home</p>
+          <p>Cine suntem?</p>
+          <p>Dezbateri</p>
+        </div>
+        <div class="footer-links-center">
+          <p>Marius Cucereanu</p>
+          <p class="second">Alexandru Romînu</p>
+        </div>
+        <div class="footer-links-right">
+          <p>Cum fac dezbateri?</p>
+          <p>Resurse Debate</p>
+          <p>Contact</p>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
 
 <style>
   .container {
-    width: 100%;
+    width: 100.4%;
     height: 9em;
     background-color: #1c1d24;
     display: flex;
@@ -183,6 +202,9 @@
     color: #474a5c;
     font-size: 1.2rem;
     margin: 0.6em auto 0.6em auto;
+  }
+  .footer-info {
+    display: none;
   }
   .icons {
     display: flex;
@@ -195,5 +217,67 @@
   }
   .right {
     margin-left: 1em;
+  }
+  @media only screen and (min-width: 1024px) {
+    .container {
+      height: 12.6em;
+    }
+    .footer-heading {
+      display: none;
+    }
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .footer-info p {
+      color: #474a5c;
+      font-size: 0.9rem;
+    }
+    .footer-links {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+    }
+    .footer-links-left {
+      display: flex;
+      margin-left: 10em;
+    }
+    .footer-links-left p {
+      padding: 0 0.8em 0 0.8em;
+    }
+
+    .footer-links-right {
+      display: flex;
+    }
+    .footer-links-right p {
+      padding: 0 0.8em 0 0.8em;
+    }
+    .footer-links-center {
+      display: flex;
+    }
+    .footer-links-center p {
+      padding: 0 0.8em 0 0.8em;
+    }
+    .footer-links-center .second {
+      padding: 0 0.8em 0 0.8em;
+    }
+    .icons {
+      margin-top: 2em;
+    }
+    .left {
+      margin-right: 5em;
+    }
+    .right {
+      margin-left: 5em;
+    }
+    h4.company {
+      color: #474a5c;
+      font-size: 1.2rem;
+      margin: 0.2em 0 0 0;
+    }
   }
 </style>

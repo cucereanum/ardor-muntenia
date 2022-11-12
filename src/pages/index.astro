@@ -7,9 +7,11 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Ardor Muntenia">
-  <FirstSection />
-  <SecondSection />
-  <ThirdSetion />
+  <div class="body-container">
+    <FirstSection />
+    <SecondSection />
+    <ThirdSetion />
+  </div>
   <Footer />
 </Layout>
 
@@ -36,5 +38,13 @@ import Layout from "../layouts/Layout.astro";
     margin: 0;
     font-size: 10px;
     font-family: "Poppins-Bold", sans-serif;
+    overflow-x: hidden;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .body-container {
+      display: flex;
+      flex-direction: row;
+    }
   }
 </style>

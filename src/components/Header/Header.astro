@@ -191,6 +191,31 @@ import NavBarItem from "../NavBar/NavBarItem.astro";
     }
   }
 
+  @media only screen and (min-width: 1024px) {
+    .menu {
+      display: none;
+    }
+    /* nav {
+      transform: translateX(0);
+      position: unset;
+      width: auto;
+      height: auto;
+      background: none;
+    }
+    .nav-item-home {
+      background: #ea2340;
+      color: #fff !important;
+      padding: 1em !;
+    }
+    ul {
+      display: flex;
+      margin-top: 1em;
+    } */
+    .close {
+      display: none;
+    }
+  }
+
   @keyframes moveDown {
     from {
       transform: translateY(-20px);
