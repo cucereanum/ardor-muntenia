@@ -171,18 +171,18 @@
       <h4 class="company">ARDOR MUNTENIA</h4>
       <div class="footer-links">
         <div class="footer-links-left">
-          <p>Home</p>
-          <p>Cine suntem?</p>
-          <p>Dezbateri</p>
+          <a>Home</a>
+          <a>Cine suntem?</a>
+          <a>Dezbateri</a>
         </div>
         <div class="footer-links-center">
-          <p>Marius Cucereanu</p>
-          <p class="second">Alexandru Romînu</p>
+          <a>Marius Cucereanu</a>
+          <a class="second">Alexandru Romînu</a>
         </div>
         <div class="footer-links-right">
-          <p>Cum fac dezbateri?</p>
-          <p>Resurse Debate</p>
-          <p>Contact</p>
+          <a>Cum fac dezbateri?</a>
+          <a>Resurse Debate</a>
+          <a>Contact</a>
         </div>
       </div>
     </div>
@@ -233,33 +233,39 @@
       margin: 0;
       padding: 0;
     }
-    .footer-info p {
+    .footer-info a {
       color: #474a5c;
+      cursor: pointer;
+      text-decoration: none;
       font-size: 0.9rem;
+    }
+    .footer-info a:hover {
+      color: #8c8fa6;
     }
     .footer-links {
       display: flex;
       width: 100%;
       justify-content: space-around;
+      margin-top: 1em;
     }
     .footer-links-left {
       display: flex;
       margin-left: 10em;
     }
-    .footer-links-left p {
+    .footer-links-left a {
       padding: 0 0.8em 0 0.8em;
     }
 
     .footer-links-right {
       display: flex;
     }
-    .footer-links-right p {
+    .footer-links-right a {
       padding: 0 0.8em 0 0.8em;
     }
     .footer-links-center {
       display: flex;
     }
-    .footer-links-center p {
+    .footer-links-center a {
       padding: 0 0.8em 0 0.8em;
     }
     .footer-links-center .second {
@@ -278,6 +284,9 @@
       color: #474a5c;
       font-size: 1.2rem;
       margin: 0.2em 0 0 0;
+    }
+    path:hover {
+      fill: #8c8fa6;
     }
   }
 </style>
