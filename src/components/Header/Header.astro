@@ -1,6 +1,7 @@
 ---
 import logo from "../../images/logo.png";
 import NavBarItem from "../NavBar/NavBarItem.astro";
+import NavBarDesktop from "./NavBarDesktop.astro";
 ---
 
 <header>
@@ -11,7 +12,11 @@ import NavBarItem from "../NavBar/NavBarItem.astro";
       </a>
     </div>
 
-    <nav>
+    <div class="navbar-desktop">
+      <NavBarDesktop />
+    </div>
+
+    <nav class="navbar-mobile">
       <svg
         width="35"
         height="35"
@@ -116,7 +121,7 @@ import NavBarItem from "../NavBar/NavBarItem.astro";
     width: 2.5em;
     cursor: pointer;
   }
-  nav {
+  nav.navbar-mobile {
     overflow: scroll;
     position: fixed;
     right: 0;
@@ -185,15 +190,30 @@ import NavBarItem from "../NavBar/NavBarItem.astro";
     padding-top: 0.2em;
     padding-bottom: 0.2em;
   }
+  .navbar-desktop {
+    display: none;
+  }
   @media only screen and (min-width: 680px) {
+    .navbar-desktop {
+      display: none;
+    }
     .container {
       margin: 0 8em;
     }
   }
 
   @media only screen and (min-width: 1024px) {
+    .navbar-mobile {
+      display: none;
+    }
+    .navbar-desktop {
+      display: block;
+    }
     .menu {
       display: none;
+    }
+    .container {
+      margin: 0 10em;
     }
     /* nav {
       transform: translateX(0);
@@ -211,9 +231,6 @@ import NavBarItem from "../NavBar/NavBarItem.astro";
       display: flex;
       margin-top: 1em;
     } */
-    .close {
-      display: none;
-    }
   }
 
   @keyframes moveDown {
