@@ -198,7 +198,7 @@ import NavBarDesktop from "./NavBarDesktop.astro";
       display: none;
     }
     .container {
-      margin: 0 8em;
+      margin: 0 6em;
     }
   }
 
@@ -213,7 +213,7 @@ import NavBarDesktop from "./NavBarDesktop.astro";
       display: none;
     }
     .container {
-      margin: 0 10em;
+      margin: 0 6em;
     }
     /* nav {
       transform: translateX(0);
@@ -231,6 +231,18 @@ import NavBarDesktop from "./NavBarDesktop.astro";
       display: flex;
       margin-top: 1em;
     } */
+  }
+
+  @media only screen and (min-width: 1160px) {
+    .container {
+      margin: 0 8em;
+    }
+  }
+
+  @media only screen and (min-width: 1440px) {
+    .container {
+      margin: 0 10em;
+    }
   }
 
   @keyframes moveDown {

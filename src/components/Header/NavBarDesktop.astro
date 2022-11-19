@@ -5,37 +5,94 @@
   <nav>
     <ul class="list">
       <li class="current"><a class="current-link"><h3>Home</h3></a></li>
-      <li class="link-container">
-        <a class="link link-1"><h3>Cine suntem?</h3></a>
-      </li>
-      <div class="subitems-link-1">
-        <ul class="sublist">
-          <li class="sublink-container">
-            <a class="sublink"><h3>Viziune</h3></a>
-          </li>
-          <li class="sublink-container">
-            <a class="sublink"><h3>Proiecte</h3></a>
-          </li>
-          <li class="sublink-container">
-            <a class="sublink"><h3>Echipa</h3></a>
-          </li>
-          <li class="sublink-container">
-            <a class="sublink"><h3>Sustinatori</h3></a>
-          </li>
-          <li class="sublink-container">
-            <a class="sublink"><h3>Sustine-ne</h3></a>
-          </li>
-        </ul>
+      <div class="link-div-1">
+        <li class="link-container">
+          <a class="link link-1"><h3>Cine suntem?</h3></a>
+        </li>
+        <div class="subitems-link subitems-link-1">
+          <ul class="sublist">
+            <li class="sublink-container">
+              <a class="sublink"><h3>Viziune</h3></a>
+            </li>
+            <li class="sublink-container">
+              <a class="sublink"><h3>Proiecte</h3></a>
+            </li>
+            <li class="sublink-container">
+              <a class="sublink"><h3>Echipa</h3></a>
+            </li>
+            <li class="sublink-container">
+              <a class="sublink"><h3>Sustinatori</h3></a>
+            </li>
+            <li class="sublink-container">
+              <a class="sublink"><h3>Sustine-ne</h3></a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <li class="link-container">
-        <a class="link link-2"><h3>Dezbateri</h3></a>
-      </li>
-      <li class="link-container">
-        <a class="link link-3"><h3>Cum fac Dezbateri?</h3></a>
-      </li>
-      <li class="link-container">
-        <a class="link link-4"><h3>Resurse Debate</h3></a>
-      </li>
+      <div class="link-div-2">
+        <li class="link-container">
+          <a class="link link-2"><h3>Dezbateri</h3></a>
+        </li>
+        <div class="subitems-link subitems-link-2">
+          <ul class="sublist">
+            <li class="sublink-container">
+              <a class="sublink"><h3>Ce sunt?</h3></a>
+            </li>
+            <li class="sublink-container">
+              <a class="sublink"><h3>Beneficii</h3></a>
+            </li>
+            <li class="sublink-container">
+              <a class="sublink"><h3>Competiții</h3></a>
+            </li>
+            <li class="sublink-container">
+              <a class="sublink"><h3>Opurtunități</h3></a>
+            </li>
+            <li class="sublink-container">
+              <a class="sublink"><h3>Cursuri</h3></a>
+            </li>
+            <li class="sublink-container">
+              <a class="sublink"><h3>Opurtunități</h3></a>
+            </li>
+            <li class="sublink-container">
+              <a class="sublink"><h3>Cursuri</h3></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="link-div-3">
+        <li class="link-container">
+          <a class="link link-3"><h3>Cum fac Dezbateri?</h3></a>
+        </li>
+        <div class="subitems-link subitems-link-3">
+          <ul class="sublist">
+            <li class="sublink-container">
+              <a class="sublink"><h3>Clubul</h3></a>
+            </li>
+            <li class="sublink-container">
+              <a class="sublink"><h3>Opțional DOR</h3></a>
+            </li>
+            <li class="sublink-container">
+              <a class="sublink"><h3>Profesioniști</h3></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="link-div-4">
+        <li class="link-container">
+          <a class="link link-4"><h3>Resurse Debate</h3></a>
+        </li>
+        <div class="subitems-link subitems-link-4">
+          <ul class="sublist">
+            <li class="sublink-container">
+              <a class="sublink"><h3>Elevi</h3></a>
+            </li>
+            <li class="sublink-container">
+              <a class="sublink"><h3>Profesori</h3></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <li class="link-container">
         <a class="link link-5"><h3>Contact</h3></a>
       </li>
@@ -50,7 +107,8 @@
     align-items: center;
     justify-content: center;
     display: flex;
-    padding: 0.3em 0.6em;
+    padding: 0.6em 0.8em;
+    margin-right: 1em;
   }
   ul {
     padding: 0;
@@ -63,7 +121,7 @@
   .link-container {
     margin-left: 1.5em;
     margin-right: 1.5em;
-    padding: 0.5em 0.8em;
+    padding: 0.5em 0.6em;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -104,15 +162,72 @@
     margin: 1.5em 0 1.5em 0;
   }
 
-  .subitems-link-1 {
+  .subitems-link {
+    display: none;
     background-color: #fff;
     position: absolute;
-    margin-left: 7.5em;
-    margin-top: 5em;
-    padding-right: 5em;
+    margin-left: 1em;
+    padding-right: 7em;
     padding-left: 2em;
+  }
+  .subitems-link-2 {
+    padding-right: 4em;
+  }
+  .subitems-link-3 {
+    padding-right: 9em;
+  }
+  .subitems-link-4 {
+    padding-right: 9em;
   }
   .sublist {
     list-style-type: none;
+  }
+  .link-div-1:hover .subitems-link-1 {
+    display: block;
+  }
+  .link-div-1:hover .link-1 {
+    color: #ea2340;
+  }
+  .link-div-2:hover .subitems-link-2 {
+    display: block;
+  }
+  .link-div-2:hover .link-2 {
+    color: #ea2340;
+  }
+  .link-div-3:hover .subitems-link-3 {
+    display: block;
+  }
+  .link-div-3:hover .link-3 {
+    color: #ea2340;
+  }
+  .link-div-4:hover .subitems-link-4 {
+    display: block;
+  }
+  .link-div-4:hover .link-4 {
+    color: #ea2340;
+  }
+  .subitems-link-1:hover {
+    display: block;
+  }
+
+  @media only screen and (min-width: 1024px) and (max-width: 1160px) {
+    .link-container {
+      margin-left: 0.8em;
+      margin-right: 0.8em;
+      padding: 0.5em 0.6em;
+    }
+    .subitems-link {
+      padding-right: 5em;
+      padding-left: 2em;
+    }
+    .subitems-link-2 {
+      padding-right: 2em;
+    }
+    .subitems-link-3 {
+      padding-right: 9em;
+    }
+    .subitems-link-4 {
+      padding-right: 9em;
+    }
   }
 </style>
