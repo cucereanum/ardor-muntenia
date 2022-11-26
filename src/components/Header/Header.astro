@@ -93,7 +93,7 @@ import NavBarDesktop from "./NavBarDesktop.astro";
 <script is:inline>
   const menu = document.querySelector(".menu");
   const close = document.querySelector(".close");
-  const nav = document.querySelector("nav");
+  const nav = document.querySelector(".navbar-mobile");
 
   menu.addEventListener("click", () => {
     nav.classList.add("open-nav");
@@ -121,7 +121,7 @@ import NavBarDesktop from "./NavBarDesktop.astro";
     width: 2.5em;
     cursor: pointer;
   }
-  nav.navbar-mobile {
+  .navbar-mobile {
     overflow: scroll;
     position: fixed;
     right: 0;
