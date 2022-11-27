@@ -2,7 +2,7 @@
 import { secondSectionData } from "../../lib/homeData";
 ---
 
-<div class="home-container">
+<div class="home-container" id="home">
   <h1 class="title">Predai</h1>
   <h4 class="subheading">
     Cei mai buni profesori folosesc educația deliberativă la clasă. Intră aici
@@ -99,6 +99,7 @@ import { secondSectionData } from "../../lib/homeData";
 </div>
 
 <script is:inline>
+  const home = document.getElementById("home");
   document
     .getElementById("center-box")
     .scrollIntoView({ behavior: "instant", inline: "center" });
@@ -109,10 +110,9 @@ import { secondSectionData } from "../../lib/homeData";
     background-image: url("../../images/home-section-2.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    height: 85em;
+    height: 80.1em;
     align-items: center;
     text-align: center;
-    z-index: 1;
   }
   .scroll-container {
     display: flex;
@@ -179,6 +179,11 @@ import { secondSectionData } from "../../lib/homeData";
     padding: 0.2em 1.2em;
     margin: 4em auto 0 auto;
     width: 15em;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+  }
+  .box-button:hover {
+    background-color: #25262d;
   }
   h4 {
     color: #d1d2db;
@@ -229,7 +234,6 @@ import { secondSectionData } from "../../lib/homeData";
       flex: 1;
       position: relative;
       justify-content: center;
-      align-items: center;
       overflow: hidden;
       background-image: url("../../images/home-section-2-desktop.png");
       transition: transform 1s, filter 1.5s;
@@ -247,13 +251,21 @@ import { secondSectionData } from "../../lib/homeData";
       display: none;
     }
     .home-container:hover {
-      flex-grow: 3;
+      flex-grow: 3.5;
+      background-image: url("../../images/home-section-2-zoom.png");
+      transition: all 1s ease-in;
     }
 
     .home-container:hover .title {
       display: block;
-      filter: opacity(0);
-      animation: showTitle 2s;
+      position: absolute;
+      top: 0;
+    }
+
+    .home-container:hover .subheading {
+      display: block;
+      position: absolute;
+      top: 4.5em;
     }
 
     .home-container:hover .scroll-container {
@@ -263,8 +275,8 @@ import { secondSectionData } from "../../lib/homeData";
       display: inline-block;
     }
     .box-content {
-      width: 20em;
-      margin-top: 2em;
+      width: 30em;
+      margin-top: 20em;
     }
     h4.description {
       color: #adadad;
