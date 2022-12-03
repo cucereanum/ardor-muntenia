@@ -2,7 +2,7 @@
 import { thirdSectionData } from "../../lib/homeData";
 ---
 
-<div class="home-container">
+<div class="home-container" id="home">
   <h1 class="title">Muncești</h1>
   <h4 class="subheading">Oportunitățile tale</h4>
   <div class="scroll-container">
@@ -96,6 +96,14 @@ import { thirdSectionData } from "../../lib/homeData";
 </div>
 
 <script is:inline>
+  const home3 = document.getElementById("home");
+  home3.addEventListener("mouseover", () => {
+    setTimeout(() => {
+      document
+        .getElementById("box")
+        .scrollIntoView({ behavior: "instant", inline: "center" });
+    }, 1000);
+  });
   document
     .getElementById("box")
     .scrollIntoView({ behavior: "instant", inline: "center" });
@@ -226,6 +234,7 @@ import { thirdSectionData } from "../../lib/homeData";
   }
   @media only screen and (min-width: 1024px) {
     .home-container {
+      z-index: 2;
       display: flex;
       flex: 1;
       position: relative;
@@ -256,12 +265,16 @@ import { thirdSectionData } from "../../lib/homeData";
       display: block;
       position: absolute;
       top: 0;
+      opacity: 0;
+      animation: onDisplay 0s 1s forwards;
     }
 
     .home-container:hover .subheading {
       display: block;
       position: absolute;
       top: 4.5em;
+      opacity: 0;
+      animation: onDisplay 0s 1s forwards;
     }
 
     .home-container:hover .scroll-container {
@@ -269,10 +282,19 @@ import { thirdSectionData } from "../../lib/homeData";
     }
     .home-container:hover .box-container {
       display: inline-block;
+      opacity: 0;
+      margin-right: 3em;
+      margin-left: 3em;
+      animation: onDisplay 0s 1s forwards;
     }
     .box-content {
-      width: 30em;
+      width: 38em;
       margin-top: 20em;
+    }
+    @keyframes onDisplay {
+      to {
+        opacity: 1;
+      }
     }
   }
 </style>

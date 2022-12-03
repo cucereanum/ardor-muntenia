@@ -171,6 +171,7 @@
   }
   @media only screen and (min-width: 1024px) {
     .home-container {
+      z-index: 2;
       display: flex;
       flex: 1;
       position: relative;
@@ -196,18 +197,30 @@
     }
     .home-container:hover .title {
       display: block;
+      opacity: 0;
       top: 0;
       position: absolute;
+      animation: onDisplay 0s 1s forwards;
     }
     .home-container:hover .subheading {
       display: block;
       top: 4.5em;
+      opacity: 0;
       position: absolute;
+      animation: onDisplay 0s 1s forwards;
     }
     .home-container:hover .box-container {
       display: block;
+      opacity: 0;
+      animation: onDisplay 0s 1s forwards;
       margin: 5em 5em 0 3em;
       height: 35em;
+    }
+
+    @keyframes onDisplay {
+      to {
+        opacity: 1;
+      }
     }
   }
 </style>
