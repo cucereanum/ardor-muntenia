@@ -2,18 +2,23 @@
 import logo from "../../images/logo.png";
 import NavBarItem from "../NavBar/NavBarItem.astro";
 import NavBarDesktop from "./NavBarDesktop.astro";
+
+export interface Props {
+  page?: string;
+}
+const { page } = Astro.props;
 ---
 
 <header>
   <div class="container">
     <div class="logo">
-      <a class="logo-icon" href="#">
+      <a class="logo-icon" href="/">
         <img src={logo} alt="Ardor Muntenia" />
       </a>
     </div>
 
     <div class="navbar-desktop">
-      <NavBarDesktop />
+      <NavBarDesktop page={page} />
     </div>
 
     <nav class="navbar-mobile">
@@ -33,7 +38,12 @@ import NavBarDesktop from "./NavBarDesktop.astro";
       <ul>
         <li class="menu-nav-item">
           <h4 class="nav-item-text">
-            <a class="nav-item nav-item-home" href="#">Home</a>
+            <a
+              class={page === "home"
+                ? "nav-item nav-item-current"
+                : "nav-item nav-item-container"}
+              href="/">Home</a
+            >
           </h4>
         </li>
         <NavBarItem
@@ -46,6 +56,7 @@ import NavBarDesktop from "./NavBarDesktop.astro";
             "Susținători",
             "Susține-ne",
           ]}
+          page={page}
         />
         <NavBarItem
           id="2"
@@ -146,13 +157,14 @@ import NavBarDesktop from "./NavBarDesktop.astro";
     display: block;
     text-decoration: none;
   }
-  .nav-item-home {
+  .nav-item-current {
     background: #c4132c;
   }
   .nav-item-text {
     margin: 0;
   }
   .nav-item-container {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -223,7 +235,7 @@ import NavBarDesktop from "./NavBarDesktop.astro";
       height: auto;
       background: none;
     }
-    .nav-item-home {
+    .nav-item-current {
       background: #ea2340;
       color: #fff !important;
       padding: 1em !;

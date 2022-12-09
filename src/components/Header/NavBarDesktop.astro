@@ -1,18 +1,28 @@
 ---
+export interface Props {
+  page: string;
+}
+const { page } = Astro.props;
 ---
 
 <div class="container">
   <nav>
     <ul class="list">
-      <li class="current"><a class="current-link"><h3>Home</h3></a></li>
+      <li class={page === "home" ? "current" : "link-container"}>
+        <a class={page === "home" ? "current-link" : "link"} href="/"
+          ><h3>Home</h3>
+        </a>
+      </li>
       <div class="link-div-1">
-        <li class="link-container">
-          <a class="link link-1"><h3>Cine suntem?</h3></a>
+        <li class={page === "viziune" ? "current" : "link-container"}>
+          <a class={page === "viziune" ? "current-link" : "link link-1"}
+            ><h3>Cine suntem?</h3>
+          </a>
         </li>
         <div class="subitems-link subitems-link-1">
           <ul class="sublist">
             <li class="sublink-container">
-              <a class="sublink"><h3>Viziune</h3></a>
+              <a class="sublink" href="/viziune"><h3>Viziune</h3></a>
             </li>
             <li class="sublink-container">
               <a class="sublink"><h3>Proiecte</h3></a>

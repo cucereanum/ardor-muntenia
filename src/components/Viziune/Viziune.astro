@@ -1,0 +1,76 @@
+---
+const paragraph_1 =
+  "În cadrul societății, ARDOR Muntenia își asumă misiunea de a contribui activ la educarea tinerilor pentru o cultură a dialogului și a dezbaterii în România. Printre valorile la care asociația aderă, se numără profesionalismul, toleranța și echitatea, acestea regăsindu-se atât în relația cu beneficiarii direcți ai dezbaterilor cât și cu celelalte asociații regionale ARDOR din țară. Asociatia Regionala de Dezbateri, Oratorie si Dezbateri – Muntenia (ARDOR Muntenia) este entitatea care gestioneaza activitatea de dezbateri in spatiul geografic al regiunii istorice Muntenia.";
+const paragraph_2 =
+  "Suntem membri ARDOR (național) și îi împărtășim valorile și metodele. Suntem ferm convinși că elevii și studenții din România au multă nevoie să învețe să gândească critic și independent, să aibă încredere în forțele proprii și să se exprime coerent.";
+---
+
+<!-- TODO: Change Images -->
+<div class="container">
+  <section class="hero">
+    <h1 class="hero-title">ARDOR Muntenia</h1>
+    <div class="line"></div>
+    <p class="hero-paragraph">{paragraph_1}</p>
+  </section>
+  <section class="hero hero-2">
+    <h1 class="hero-title">De ce facem asta?</h1>
+    <div class="line"></div>
+    <p class="hero-paragraph hero-paragraph-2">{paragraph_2}</p>
+    <h1 class="title">Echipa ARDOR Muntenia</h1>
+  </section>
+</div>
+
+<style>
+  .hero {
+    background-image: url("../../images/viziune/viziune-section-1.png");
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 101%;
+  }
+  .hero-2 {
+    background-image: url("../../images/viziune/viziune-section-2.png");
+  }
+  .hero-title {
+    font-size: 4.6em;
+    font-family: "Poppins-Bold";
+    color: #fff;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    padding: 2rem 2rem 0 2rem;
+    line-height: 4rem;
+    letter-spacing: 0.1rem;
+  }
+  .hero-paragraph {
+    text-align: center;
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1.4em;
+    font-family: "Poppins-Bold";
+    font-weight: bold;
+    padding: 0 1em 0 1em;
+    margin-bottom: 2em;
+  }
+  .hero-paragraph-2 {
+    margin-bottom: 0.5em;
+  }
+  .line {
+    width: 80%;
+    height: 0.1em;
+    margin: 1em 3em 2em 3em;
+    background-color: #fff;
+  }
+  .title {
+    margin: 0;
+    font-size: 4em;
+    font-family: "Poppins-Bold";
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    padding: 2rem 1rem 0 1rem;
+    line-height: 4rem;
+    letter-spacing: 0.1rem;
+  }
+</style>

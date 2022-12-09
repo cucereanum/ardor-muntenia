@@ -2,13 +2,21 @@
 export interface Props {
   id: string;
   title: string;
+  page?: string;
   navItems?: string[];
 }
-const { id, title, navItems } = Astro.props;
+const { id, title, navItems, page } = Astro.props;
+
+const checkOne = title === "Cine suntem?" && page === "viziune";
 ---
 
 <li class="menu-nav-item">
-  <a class="nav-item nav-item-container" id={title} href="#">
+  <a
+    class={checkOne
+      ? "nav-item nav-item-current"
+      : "nav-item nav-item-container"}
+    id={title}
+  >
     <h4 class="nav-item-text">{title}</h4>
     {
       navItems && navItems.length >= 1 ? (
@@ -34,13 +42,23 @@ const { id, title, navItems } = Astro.props;
   <div class="nav-item-sub-container" id={id}>
     {
       navItems && navItems.length >= 1
-        ? navItems.map((navItem) => (
-            <h4 class="sub-container-text">
-              <a class="" href="#">
-                {navItem}
-              </a>
-            </h4>
-          ))
+        ? navItems.map((navItem) => {
+            const link = navItem.toLocaleLowerCase();
+            const checkCurrentSubItem = link === page;
+            return (
+              <h4
+                class={
+                  checkCurrentSubItem
+                    ? "sub-container-text sub-container-current"
+                    : "sub-container-text"
+                }
+              >
+                <a class="" href={link}>
+                  {navItem}
+                </a>
+              </h4>
+            );
+          })
         : null
     }
   </div>
@@ -91,6 +109,14 @@ const { id, title, navItems } = Astro.props;
     margin: 0;
   }
   .nav-item-container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-item-current {
+    background: #c4132c;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -111,5 +137,8 @@ const { id, title, navItems } = Astro.props;
     font-family: "Poppins-Medium";
     margin: 0.5rem auto 0 auto;
     padding: 0.2em 0 0.2em 3em;
+  }
+  .sub-container-current {
+    background: #c4132c;
   }
 </style>
