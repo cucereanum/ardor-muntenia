@@ -3,6 +3,8 @@ const paragraph_1 =
   "În cadrul societății, ARDOR Muntenia își asumă misiunea de a contribui activ la educarea tinerilor pentru o cultură a dialogului și a dezbaterii în România. Printre valorile la care asociația aderă, se numără profesionalismul, toleranța și echitatea, acestea regăsindu-se atât în relația cu beneficiarii direcți ai dezbaterilor cât și cu celelalte asociații regionale ARDOR din țară. Asociatia Regionala de Dezbateri, Oratorie si Dezbateri – Muntenia (ARDOR Muntenia) este entitatea care gestioneaza activitatea de dezbateri in spatiul geografic al regiunii istorice Muntenia.";
 const paragraph_2 =
   "Suntem membri ARDOR (național) și îi împărtășim valorile și metodele. Suntem ferm convinși că elevii și studenții din România au multă nevoie să învețe să gândească critic și independent, să aibă încredere în forțele proprii și să se exprime coerent.";
+const paragraph_3 =
+  "În România există în continuare o problemă legată discuțiile în contradictoriu, oamenii neavând inrădăcinată o cultură a dialogului. De aceea, scopul nostru este să invătam ținerii să fie deschiși în a ascultă mai multe perspective asupra aceluiași subiect.";
 ---
 
 <!-- TODO: Change Images -->
@@ -11,18 +13,66 @@ const paragraph_2 =
     <h1 class="hero-title">ARDOR Muntenia</h1>
     <div class="line"></div>
     <p class="hero-paragraph">{paragraph_1}</p>
+    <img
+      src="/assets/viziune/students.png"
+      alt="Students are debating"
+      class="img-section-3"
+    />
   </section>
   <section class="hero hero-2">
     <h1 class="hero-title">De ce facem asta?</h1>
     <div class="line"></div>
-    <p class="hero-paragraph hero-paragraph-2">{paragraph_2}</p>
+    <p class="hero-paragraph hero-paragraph-margin">{paragraph_2}</p>
     <h1 class="title">Echipa ARDOR Muntenia</h1>
+    <div class="gallery">
+      <img
+        src="/assets/viziune/student.png"
+        class="image"
+        alt="Profile Image"
+      />
+      <img
+        src="/assets/viziune/student.png"
+        class="image"
+        alt="Profile Image"
+      />
+      <img
+        src="/assets/viziune/student.png"
+        class="image image-big"
+        alt="Profile Image"
+      />
+      <img
+        src="/assets/viziune/student.png"
+        class="image"
+        alt="Profile Image"
+      />
+      <img
+        src="/assets/viziune/student.png"
+        class="image image-last"
+        alt="Profile Image"
+      />
+    </div>
+  </section>
+  <section class="hero hero-3">
+    <h1 class="hero-title">Scopul nostru</h1>
+    <div class="line"></div>
+    <p class="hero-paragraph hero-paragraph-margin">{paragraph_3}</p>
+    <img
+      src="/assets/viziune/students.png"
+      alt="Students are debating"
+      class="img-section-3"
+    />
+    <h1 class="subheading">
+      Dezbaterile sunt cea mai mare oportunitate de dezvoltare personală în
+      viața unei persoane care își dorește să fie mai creativă, mai ageră, mai
+      calculată.
+    </h1>
   </section>
 </div>
 
 <style>
   .hero {
-    background-image: url("../../images/viziune/viziune-section-1.png");
+    background-image: url("/assets/viziune/viziune-section-1.png");
+    background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -30,7 +80,10 @@ const paragraph_2 =
     width: 101%;
   }
   .hero-2 {
-    background-image: url("../../images/viziune/viziune-section-2.png");
+    background-image: url("/assets/viziune/viziune-section-2.png");
+  }
+  .hero-3 {
+    background-image: url("/assets/viziune/viziune-section-3.png");
   }
   .hero-title {
     font-size: 4.6em;
@@ -53,14 +106,52 @@ const paragraph_2 =
     padding: 0 1em 0 1em;
     margin-bottom: 2em;
   }
-  .hero-paragraph-2 {
+  .hero-paragraph-margin {
     margin-bottom: 0.5em;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 2em;
+  }
+  .image {
+    width: 15em;
+    height: 15em;
+    margin: 3px;
+    object-fit: contain;
+  }
+  .image-big {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 30.5em;
+    height: 20em;
+    margin: 5px;
+    object-fit: contain;
+  }
+  .img-section-3 {
+    height: 25em;
+    object-fit: contain;
+    width: 100%;
+    margin-bottom: 2em;
   }
   .line {
     width: 80%;
     height: 0.1em;
     margin: 1em 3em 2em 3em;
     background-color: #fff;
+  }
+  .subheading {
+    margin: 0;
+    margin-bottom: 2em;
+    font-size: 2.8em;
+    font-family: "Poppins-Bold";
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0 1rem 0 1rem;
+    line-height: 3rem;
+    letter-spacing: 0.1rem;
   }
   .title {
     margin: 0;
@@ -72,5 +163,29 @@ const paragraph_2 =
     padding: 2rem 1rem 0 1rem;
     line-height: 4rem;
     letter-spacing: 0.1rem;
+  }
+  @media only screen and (min-width: 680px) {
+    .gallery {
+      display: flex;
+      flex-wrap: wrap-reverse;
+      justify-content: center;
+      margin-bottom: 2em;
+      padding: 0 5em 0 5em;
+    }
+    .image {
+      width: 15em;
+      height: 15em;
+      margin: 5px;
+      object-fit: contain;
+    }
+    .img-section-3 {
+      height: 35em;
+    }
+    .hero-paragraph {
+      font-size: 1.6rem;
+    }
+    .subheading {
+      font-size: 3.2em;
+    }
   }
 </style>
