@@ -9,7 +9,12 @@ const paragraph_3 =
 
 <!-- TODO: Change Images -->
 <div class="container">
-  <section class="hero">
+  <ul>
+    <li id="tag1" data-page="sec1" class="scroll_item active"></li>
+    <li id="tag2" data-page="sec2" class="scroll_item"></li>
+    <li id="tag3" data-page="sec3" class="scroll_item"></li>
+  </ul>
+  <section class="hero" id="sec1">
     <h1 class="hero-title">ARDOR Muntenia</h1>
     <div class="line"></div>
     <p class="hero-paragraph">{paragraph_1}</p>
@@ -19,7 +24,7 @@ const paragraph_3 =
       class="img-section-3"
     />
   </section>
-  <section class="hero hero-2">
+  <section class="hero hero-2" id="sec2">
     <h1 class="hero-title">De ce facem asta?</h1>
     <div class="line"></div>
     <p class="hero-paragraph hero-paragraph-margin">{paragraph_2}</p>
@@ -52,7 +57,7 @@ const paragraph_3 =
       />
     </div>
   </section>
-  <section class="hero hero-3">
+  <section class="hero hero-3" id="sec3">
     <h1 class="hero-title">Scopul nostru</h1>
     <div class="line"></div>
     <p class="hero-paragraph hero-paragraph-margin">{paragraph_3}</p>
@@ -68,8 +73,35 @@ const paragraph_3 =
     </h1>
   </section>
 </div>
-
+<script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+  is:inline
+></script>
+<script src="/assets/viziune/scroll.js" is:inline></script>
 <style>
+  ul {
+    top: calc(100% / 2 - 60px);
+    position: fixed;
+    height: auto;
+    right: 10px;
+    display: block;
+  }
+
+  li {
+    cursor: pointer;
+    list-style-type: none;
+    width: 8px;
+    height: 8px;
+    background-color: brown;
+    border-radius: 4px;
+    margin: 20px 15px;
+    transition: 0.3s ease;
+  }
+
+  .active {
+    background-color: yellow;
+  }
+
   .hero {
     background-image: url("/assets/viziune/viziune-section-1.png");
     background-size: cover;
@@ -186,6 +218,17 @@ const paragraph_3 =
     }
     .subheading {
       font-size: 3.2em;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    .hero {
+      height: 93vh;
+    }
+    .hero-2 {
+      height: 100vh;
+    }
+    .hero-3 {
+      height: 85vh;
     }
   }
 </style>
