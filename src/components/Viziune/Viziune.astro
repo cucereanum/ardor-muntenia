@@ -30,31 +30,51 @@ const paragraph_3 =
     <p class="hero-paragraph hero-paragraph-margin">{paragraph_2}</p>
     <h1 class="title">Echipa ARDOR Muntenia</h1>
     <div class="gallery">
-      <img
-        src="/assets/viziune/student.png"
-        class="image"
-        alt="Profile Image"
-      />
-      <img
-        src="/assets/viziune/student.png"
-        class="image"
-        alt="Profile Image"
-      />
-      <img
-        src="/assets/viziune/student.png"
-        class="image image-big"
-        alt="Profile Image"
-      />
-      <img
-        src="/assets/viziune/student.png"
-        class="image"
-        alt="Profile Image"
-      />
-      <img
-        src="/assets/viziune/student.png"
-        class="image image-last"
-        alt="Profile Image"
-      />
+      <div class="gallery-item item-alone">
+        <img
+          src="/assets/viziune/student.png"
+          class="image"
+          alt="Profile Image"
+        />
+        <h3>Alexandru Rominu</h3>
+        <p>Software Engineer</p>
+      </div>
+      <div class="gallery-item">
+        <img
+          src="/assets/viziune/student.png"
+          class="image"
+          alt="Profile Image"
+        />
+        <h3>Alexandru Rominu</h3>
+        <p>Software Engineer</p>
+      </div>
+      <div class="gallery-item">
+        <img
+          src="/assets/viziune/student.png"
+          class="image"
+          alt="Profile Image"
+        />
+        <h3>Alexandru Rominu</h3>
+        <p>Software Engineer</p>
+      </div>
+      <div class="gallery-item">
+        <img
+          src="/assets/viziune/student.png"
+          class="image"
+          alt="Profile Image"
+        />
+        <h3>Alexandru Rominu</h3>
+        <p>Software Engineer</p>
+      </div>
+      <div class="gallery-item">
+        <img
+          src="/assets/viziune/student.png"
+          class="image image-last"
+          alt="Profile Image"
+        />
+        <h3>Alexandru Rominu</h3>
+        <p>Software Engineer</p>
+      </div>
     </div>
   </section>
   <section class="hero hero-3" id="sec3">
@@ -146,19 +166,34 @@ const paragraph_3 =
     grid-template-columns: 1fr 1fr;
     margin-bottom: 2em;
   }
+  .gallery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    margin: 1em;
+  }
+  .gallery-item h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 0.2em;
+  }
+  .gallery-item p {
+    font-style: italic;
+    font-size: 0.8rem;
+    margin: 0.2em;
+    text-align: center;
+  }
   .image {
     width: 15em;
     height: 15em;
     margin: 3px;
+    border-radius: 30px;
     object-fit: contain;
   }
-  .image-big {
+  .item-alone {
     grid-column-start: 1;
     grid-column-end: 3;
-    width: 30.5em;
-    height: 20em;
-    margin: 5px;
-    object-fit: contain;
   }
   .img-section-3 {
     height: 25em;
@@ -204,14 +239,16 @@ const paragraph_3 =
       margin-bottom: 2em;
       padding: 0 5em 0 5em;
     }
+    .item-alone {
+      margin-left: 0;
+    }
     .image {
-      width: 15em;
-      height: 15em;
-      margin: 5px;
+      width: 20em;
+      height: 20em;
       object-fit: contain;
     }
     .img-section-3 {
-      height: 35em;
+      height: 40em;
     }
     .hero-paragraph {
       font-size: 1.6rem;
@@ -224,11 +261,32 @@ const paragraph_3 =
     .hero {
       height: 93vh;
     }
+    .hero-paragraph {
+      margin-top: 0;
+    }
     .hero-2 {
       height: 100vh;
     }
     .hero-3 {
       height: 85vh;
+    }
+  }
+  @media only screen and (min-width: 1208px) {
+    .image {
+      width: 22em;
+      height: 22em;
+    }
+    .gallery-item {
+      margin-top: 5em;
+    }
+    .gallery-item h3 {
+      font-size: 1.5rem;
+    }
+    .gallery-item p {
+      font-size: 1rem;
+    }
+    .hero-2 {
+      height: 100vh;
     }
   }
 </style>

@@ -22,7 +22,11 @@ const { page } = Astro.props;
         <div class="subitems-link subitems-link-1">
           <ul class="sublist">
             <li class="sublink-container">
-              <a class="sublink" href="/viziune"><h3>Viziune</h3></a>
+              <a
+                class={page === "viziune" ? "sublink-current" : "sublink"}
+                href="/viziune"
+                ><h3>Viziune</h3>
+              </a>
             </li>
             <li class="sublink-container">
               <a class="sublink"><h3>Proiecte</h3></a>
@@ -173,6 +177,12 @@ const { page } = Astro.props;
   }
   .sublink-container {
     margin: 1.5em 0 1.5em 0;
+  }
+
+  .sublink-current {
+    color: #ea2340;
+    font-size: 0.8rem;
+    cursor: pointer;
   }
 
   .subitems-link {
