@@ -49,7 +49,9 @@ $(".scroll_item").on("click", function () {
 
 $(window)
   .on("scroll", function (e) {
-    var elems = $("#sec1, #sec2, #sec3"),
+    var elems = $(
+        "#sec1, #sec2, #sec3, #sec4,#sec5,#sec6,#sec7,#sec8,#sec9,#sec10"
+      ),
       scrolled = $(this).scrollTop();
 
     var dataPage = elems

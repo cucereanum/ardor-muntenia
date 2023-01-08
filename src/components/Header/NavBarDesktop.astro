@@ -3,6 +3,13 @@ export interface Props {
   page: string;
 }
 const { page } = Astro.props;
+const secondNavArray = [
+  "viziune",
+  "proiecte",
+  "echipa",
+  "sustinatori",
+  "sustine",
+];
 ---
 
 <div class="container">
@@ -14,8 +21,13 @@ const { page } = Astro.props;
         </a>
       </li>
       <div class="link-div-1">
-        <li class={page === "viziune" ? "current" : "link-container"}>
-          <a class={page === "viziune" ? "current-link" : "link link-1"}
+        <li
+          class={secondNavArray.includes(page) ? "current" : "link-container"}
+        >
+          <a
+            class={secondNavArray.includes(page)
+              ? "current-link"
+              : "link link-1"}
             ><h3>Cine suntem?</h3>
           </a>
         </li>
@@ -29,7 +41,11 @@ const { page } = Astro.props;
               </a>
             </li>
             <li class="sublink-container">
-              <a class="sublink"><h3>Proiecte</h3></a>
+              <a
+                class={page === "proiecte" ? "sublink-current" : "sublink"}
+                href="/proiecte"
+                ><h3>Proiecte</h3>
+              </a>
             </li>
             <li class="sublink-container">
               <a class="sublink"><h3>Echipa</h3></a>

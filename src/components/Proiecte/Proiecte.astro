@@ -1,0 +1,159 @@
+---
+import { data } from "../../lib/proiecteData";
+---
+
+<div class="container">
+  <ul>
+    {
+      data.map((listItem, index) => (
+        <li
+          id={`tag${index + 1}`}
+          data-page={`sec${index + 1}`}
+          class={index + 1 == 1 ? "scroll_item active" : "scroll_item"}
+        />
+      ))
+    }
+  </ul>
+  {
+    data.map((dataSection, index) => (
+      <section
+        class={index + 1 === 1 ? `hero` : `hero hero-${index + 1}`}
+        id={`sec${index + 1}`}
+      >
+        <img src={dataSection.image} />
+        <h1>{dataSection.title}</h1>
+        <div class="paragraph-container">
+          {dataSection.paragraphs.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+          {dataSection.link ? (
+            <div class="link-container">
+              <a href={dataSection.link} target="_blank">
+                <svg
+                  width="35"
+                  height="35"
+                  viewBox="0 0 35 35"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.6111 5.83333V9.72222H3.88889V31.1111H25.2778V21.3889H29.1667V33.0556C29.1667 33.5713 28.9618 34.0658 28.5972 34.4305C28.2325 34.7951 27.7379 35 27.2222 35H1.94444C1.42875 35 0.934169 34.7951 0.569514 34.4305C0.20486 34.0658 0 33.5713 0 33.0556V7.77778C0 7.26208 0.20486 6.7675 0.569514 6.40285C0.934169 6.03819 1.42875 5.83333 1.94444 5.83333H13.6111ZM35 0V17.5L27.6228 10.1247L15.9581 21.7914L13.2086 19.0419L24.8733 7.37528L17.5 0H35Z"
+                    fill="white"
+                  />
+                </svg>
+              </a>
+              <h4>{dataSection.title}</h4>
+            </div>
+          ) : null}
+        </div>
+      </section>
+    ))
+  }
+</div>
+<script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+  is:inline
+></script>
+<script src="/assets/viziune/scroll.js" is:inline></script>
+<style>
+  .container {
+    width: 99%;
+  }
+  ul {
+    top: calc(100% / 2 - 60px);
+    position: fixed;
+    height: auto;
+    right: 10px;
+    display: block;
+  }
+
+  li {
+    cursor: pointer;
+    list-style-type: none;
+    width: 8px;
+    height: 8px;
+    background-color: #c4132c;
+    border-radius: 4px;
+    margin: 20px 15px;
+    transition: 0.3s ease;
+  }
+
+  .active {
+    background-color: yellow;
+  }
+
+  .hero {
+    background-image: url("/assets/viziune/viziune-section-1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 101%;
+    min-height: 70vh;
+  }
+
+  .hero img {
+    width: 70%;
+    height: 20em;
+    object-fit: contain;
+    margin-top: 2em;
+  }
+  .hero h1 {
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .paragraph-container {
+    margin: 2em;
+    padding: 1.5em 2.5em;
+    background-color: #16161b;
+    border-radius: 1em;
+  }
+  .paragraph-container p {
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.4rem;
+  }
+
+  .link-container h4 {
+    color: #fff;
+    margin: 1em 1em 0 1em;
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+  }
+  .link-container svg {
+    margin-top: 10px;
+  }
+
+  .hero-2 {
+    background-image: url("/assets/viziune/viziune-section-2.png");
+  }
+  .hero-3 {
+    background-image: url("/assets/viziune/viziune-section-3.png");
+  }
+
+  @media only screen and (min-width: 680px) {
+  }
+  @media only screen and (min-width: 1024px) {
+    .hero {
+      height: 93vh;
+    }
+    .hero-2 {
+      height: 100vh;
+    }
+    .hero-3 {
+      height: 85vh;
+    }
+  }
+  @media only screen and (min-width: 1208px) {
+    .hero-2 {
+      height: 100vh;
+    }
+  }
+</style>

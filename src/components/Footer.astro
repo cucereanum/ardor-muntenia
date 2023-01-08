@@ -1,4 +1,6 @@
 ---
+const { changeWidth } = Astro.props;
+console.log(changeWidth);
 ---
 
 <footer>
@@ -191,7 +193,15 @@
 
 <style>
   .container {
-    width: 100.4%;
+    width: 100%;
+    height: 9em;
+    background-color: #1c1d24;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container-wider {
+    width: 101%;
     height: 9em;
     background-color: #1c1d24;
     display: flex;
