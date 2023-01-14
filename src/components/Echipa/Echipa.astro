@@ -1,0 +1,73 @@
+---
+import { echipaData } from "../../lib/echipaData";
+---
+
+<div class="container">
+  <h1 class="container-header">
+    “ Oamenii care fac lucrurile sa se intample ”
+  </h1>
+  {
+    echipaData.map((dataObj) => (
+      <div class="profile-container">
+        <img src={dataObj.image} class="image" alt={dataObj.name} />
+        <h3>{dataObj.name}</h3>
+        <h4>{dataObj.role}</h4>
+        <h6>{dataObj.description}</h6>
+      </div>
+    ))
+  }
+</div>
+<script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+  is:inline
+></script>
+<script src="/assets/viziune/scroll.js" is:inline></script>
+<style>
+  .container {
+    width: 100%;
+    background-color: #16171d;
+  }
+  .container-header {
+    margin: 0;
+    color: #fff;
+    padding: 1em 2em 1em 2em;
+    font-size: 1.5rem;
+    text-align: center;
+    font-style: italic;
+  }
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    padding-bottom: 2em;
+  }
+  .profile-container h3 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 0.2em;
+    padding-top: 0.5em;
+  }
+  .profile-container h4 {
+    font-style: italic;
+    font-size: 1rem;
+    margin: 0.2em;
+    text-align: center;
+    letter-spacing: 0.2em;
+  }
+  .profile-container h6 {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 0.2em;
+    margin-top: 0.5em;
+    padding: 0 2em 0.5em 2em;
+    line-height: 1.4em;
+  }
+  .image {
+    width: 15em;
+    height: 15em;
+    margin: 3px;
+    border-radius: 30px;
+    object-fit: contain;
+  }
+</style>

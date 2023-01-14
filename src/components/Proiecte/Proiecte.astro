@@ -17,10 +17,10 @@ import { data } from "../../lib/proiecteData";
   {
     data.map((dataSection, index) => (
       <section
-        class={index + 1 === 1 ? `hero` : `hero hero-${index + 1}`}
+        class={index + 1 === 1 ? `hero` : `hero hero-${(index % 3) + 1}`}
         id={`sec${index + 1}`}
       >
-        <img src={dataSection.image} />
+        <img src={dataSection.image} alt={dataSection.title} />
         <h1>{dataSection.title}</h1>
         <div class="paragraph-container">
           {dataSection.paragraphs.map((paragraph) => (
@@ -100,7 +100,7 @@ import { data } from "../../lib/proiecteData";
     margin-top: 2em;
   }
   .hero h1 {
-    margin: 0;
+    margin: 1em 0 0 0;
     color: white;
     font-size: 1.5rem;
     text-align: center;
@@ -139,8 +139,26 @@ import { data } from "../../lib/proiecteData";
   }
 
   @media only screen and (min-width: 680px) {
+    .paragraph-container {
+      margin: 2em 5em 3em 5em;
+    }
+    .paragraph-container p {
+      font-size: 1.4rem;
+    }
   }
   @media only screen and (min-width: 1024px) {
+    .paragraph-container {
+      margin: 4em 8em 6em 8em;
+    }
+    .paragraph-container p {
+      line-height: 1.6em;
+    }
+    .hero {
+      min-height: 80em;
+    }
+    .hero img {
+      margin-top: 4em;
+    }
     .hero {
       height: 93vh;
     }
@@ -151,7 +169,10 @@ import { data } from "../../lib/proiecteData";
       height: 85vh;
     }
   }
-  @media only screen and (min-width: 1208px) {
+  @media only screen and (min-width: 1200px) {
+    .hero {
+      min-height: 75em;
+    }
     .hero-2 {
       height: 100vh;
     }

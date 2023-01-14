@@ -59,7 +59,7 @@ export const data = [
   {
     title: "DEZBATE!ARGUMENTEAZA! AFIRMA-TE!",
     paragraphs: [
-      "Tabara de trei zile are ca obiectiv atragerea de noi membri in miscarea de dezbateri din judetul Teleorman.Se adreseaza elevilor de liceu din clasele IX-XI din judetul Teleorman.",
+      "Tabara de trei zile are ca obiectiv atragerea de noi membri in miscarea de dezbateri din judetul Teleorman. Se adreseaza elevilor de liceu din clasele IX-XI din judetul Teleorman.",
     ],
     image: "/assets/proiecte/dezbate.jpg",
   },
