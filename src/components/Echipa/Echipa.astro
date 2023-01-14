@@ -6,22 +6,26 @@ import { echipaData } from "../../lib/echipaData";
   <h1 class="container-header">
     “ Oamenii care fac lucrurile sa se intample ”
   </h1>
-  {
-    echipaData.map((dataObj) => (
-      <div class="profile-container">
-        <img src={dataObj.image} class="image" alt={dataObj.name} />
-        <h3>{dataObj.name}</h3>
-        <h4>{dataObj.role}</h4>
-        <h6>{dataObj.description}</h6>
-      </div>
-    ))
-  }
+  <div class="grid-container">
+    {
+      echipaData.map((dataObj, index) => (
+        <div
+          class={
+            index === 0
+              ? "profile-container profile-container-main"
+              : "profile-container"
+          }
+        >
+          <img src={dataObj.image} class="image" alt={dataObj.name} />
+          <h3>{dataObj.name}</h3>
+          <h4>{dataObj.role}</h4>
+          <h6>{dataObj.description}</h6>
+        </div>
+      ))
+    }
+  </div>
 </div>
-<script
-  src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-  is:inline
-></script>
-<script src="/assets/viziune/scroll.js" is:inline></script>
+
 <style>
   .container {
     width: 100%;
@@ -34,6 +38,10 @@ import { echipaData } from "../../lib/echipaData";
     font-size: 1.5rem;
     text-align: center;
     font-style: italic;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto;
   }
   .profile-container {
     display: flex;
@@ -69,5 +77,45 @@ import { echipaData } from "../../lib/echipaData";
     margin: 3px;
     border-radius: 30px;
     object-fit: contain;
+  }
+  @media only screen and (min-width: 680px) {
+    .grid-container {
+      grid-template-columns: auto auto;
+    }
+    .container-header {
+      font-size: 1.8rem;
+    }
+    .image {
+      width: 18em;
+      height: 18em;
+    }
+    .profile-container h6 {
+      font-size: 1.2rem;
+      line-height: 1.6em;
+    }
+    .profile-container h4 {
+      font-size: 1.2rem;
+    }
+    .profile-container h3 {
+      font-size: 1.7rem;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    .grid-container {
+      grid-template-columns: auto auto auto;
+    }
+    .profile-container {
+      padding-bottom: 3em;
+    }
+    .profile-container-main {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+    .image {
+      width: 20em;
+      height: 20em;
+    }
   }
 </style>
