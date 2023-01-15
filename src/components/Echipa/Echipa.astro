@@ -1,5 +1,6 @@
 ---
 import { echipaData } from "../../lib/echipaData";
+import UserImage from "../reusable/UserImage.astro";
 ---
 
 <div class="container">
@@ -16,7 +17,7 @@ import { echipaData } from "../../lib/echipaData";
               : "profile-container"
           }
         >
-          <img src={dataObj.image} class="image" alt={dataObj.name} />
+          <UserImage src={dataObj.image} alt={dataObj.name} />
           <h3>{dataObj.name}</h3>
           <h4>{dataObj.role}</h4>
           <h6>{dataObj.description}</h6>

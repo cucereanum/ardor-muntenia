@@ -1,4 +1,7 @@
 ---
+import SectionHeader from "../reusable/SectionHeader.astro";
+import SectionParagraph from "../reusable/SectionParagraph.astro";
+
 const paragraph_1 =
   "În cadrul societății, ARDOR Muntenia își asumă misiunea de a contribui activ la educarea tinerilor pentru o cultură a dialogului și a dezbaterii în România. Printre valorile la care asociația aderă, se numără profesionalismul, toleranța și echitatea, acestea regăsindu-se atât în relația cu beneficiarii direcți ai dezbaterilor cât și cu celelalte asociații regionale ARDOR din țară. Asociatia Regionala de Dezbateri, Oratorie si Dezbateri – Muntenia (ARDOR Muntenia) este entitatea care gestioneaza activitatea de dezbateri in spatiul geografic al regiunii istorice Muntenia.";
 const paragraph_2 =
@@ -15,9 +18,10 @@ const paragraph_3 =
     <li id="tag3" data-page="sec3" class="scroll_item"></li>
   </ul>
   <section class="hero" id="sec1">
-    <h1 class="hero-title">ARDOR Muntenia</h1>
+    <SectionHeader title="ARDOR Muntenia" />
     <div class="line"></div>
-    <p class="hero-paragraph">{paragraph_1}</p>
+    <SectionParagraph paragraph={paragraph_1} />
+
     <img
       src="/assets/viziune/students.png"
       alt="Students are debating"
@@ -25,9 +29,9 @@ const paragraph_3 =
     />
   </section>
   <section class="hero hero-2" id="sec2">
-    <h1 class="hero-title">De ce facem asta?</h1>
+    <SectionHeader title="De ce facem asta?" />
     <div class="line"></div>
-    <p class="hero-paragraph hero-paragraph-margin">{paragraph_2}</p>
+    <SectionParagraph paragraph={paragraph_2} removeMargin={true} />
     <h1 class="title">Echipa ARDOR Muntenia</h1>
     <div class="gallery">
       <div class="gallery-item item-alone">
@@ -78,9 +82,9 @@ const paragraph_3 =
     </div>
   </section>
   <section class="hero hero-3" id="sec3">
-    <h1 class="hero-title">Scopul nostru</h1>
+    <SectionHeader title="Scopul nostru" />
     <div class="line"></div>
-    <p class="hero-paragraph hero-paragraph-margin">{paragraph_3}</p>
+    <SectionParagraph paragraph={paragraph_3} removeMargin={true} />
     <img
       src="/assets/viziune/students.png"
       alt="Students are debating"

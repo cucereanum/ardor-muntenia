@@ -1,4 +1,6 @@
 ---
+import Text from "../reusable/Text.astro";
+
 const textOne =
   "Misiunea Romanian-American Foundation este să promoveze şi să consolideze condiţiile necesare unei economii de piaţă sustenabile şi unei societăţi democratice, care să asigure accesul la oportunităţi pentru toate segmentele populaţiei din România. Viziunea acestora este cea a unei societăți prospere, implicate și cu spirit antreprenorial, o societate compusă din cetățeni care se comportă cu responsabilitate.";
 const textTwo =
@@ -13,7 +15,7 @@ const textTwo =
     />
     <div class="content-text">
       <h2>Romanian American Foundation</h2>
-      <h4>{textOne}</h4>
+      <Text text={textOne} />
     </div>
   </div>
   <div class="content">
@@ -23,7 +25,7 @@ const textTwo =
     />
     <div class="content-text">
       <h2>Konrad Adenauer Stiftung</h2>
-      <h4>{textTwo}</h4>
+      <Text text={textTwo} />
     </div>
   </div>
 </div>

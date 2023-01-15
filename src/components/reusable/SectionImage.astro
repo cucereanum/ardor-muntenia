@@ -1,0 +1,19 @@
+---
+const { src, alt } = Astro.props;
+---
+
+<img src={src} alt={alt} />
+
+<style>
+  img {
+    width: 80%;
+    height: 25em;
+    object-fit: contain;
+    margin-top: 2em;
+  }
+  @media only screen and (min-width: 1024px) {
+    img {
+      margin-top: 4em;
+    }
+  }
+</style>

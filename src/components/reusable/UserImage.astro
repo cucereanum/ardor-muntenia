@@ -1,0 +1,28 @@
+---
+const { src, alt } = Astro.props;
+---
+
+<img src={src} class="image" alt={alt} />
+
+<style>
+  .image {
+    width: 15em;
+    height: 15em;
+    margin: 3px;
+    border-radius: 30px;
+    object-fit: contain;
+  }
+
+  @media only screen and (min-width: 680px) {
+    .image {
+      width: 18em;
+      height: 18em;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    .image {
+      width: 20em;
+      height: 20em;
+    }
+  }
+</style>

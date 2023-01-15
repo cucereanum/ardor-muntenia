@@ -1,0 +1,39 @@
+---
+const { paragraph, removeMargin = false } = Astro.props;
+---
+
+<p
+  class={removeMargin
+    ? "hero-paragraph hero-paragraph-margin"
+    : "hero-paragraph"}
+>
+  {paragraph}
+</p>
+
+<style>
+  .hero-paragraph {
+    text-align: center;
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1.4em;
+    font-family: "Poppins-Bold";
+    font-weight: bold;
+    padding: 0 2em 0 1em;
+    margin-bottom: 2em;
+  }
+  .hero-paragraph-margin {
+    margin-bottom: 0.5em;
+  }
+
+  @media only screen and (min-width: 680px) {
+    .hero-paragraph {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .hero-paragraph {
+      margin-top: 0;
+    }
+  }
+</style>
