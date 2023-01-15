@@ -1,0 +1,82 @@
+---
+const textOne =
+  "Misiunea Romanian-American Foundation este să promoveze şi să consolideze condiţiile necesare unei economii de piaţă sustenabile şi unei societăţi democratice, care să asigure accesul la oportunităţi pentru toate segmentele populaţiei din România. Viziunea acestora este cea a unei societăți prospere, implicate și cu spirit antreprenorial, o societate compusă din cetățeni care se comportă cu responsabilitate.";
+const textTwo =
+  "Konrad Adenauer Stiftung este o fundație politică care se ocupă cu campanii naționale și internaționale pentru pace, libertate și justiție prin educație politică. Consolidarea democrației, promovarea unificării europene, intensificarea relațiilor transatlantice și cooperarea pentru dezvoltare sunt preocupările speciale ale fundației. Ca agenție de consultanță și consultanță, dezvoltă bazele științifice și analize actuale pentru acțiuni politice.";
+---
+
+<div class="container">
+  <div class="content">
+    <img
+      src="/assets/sustinatori/roaf.png"
+      alt="Romanian American Foundation"
+    />
+    <div class="content-text">
+      <h2>Romanian American Foundation</h2>
+      <h4>{textOne}</h4>
+    </div>
+  </div>
+  <div class="content">
+    <img
+      src="/assets/sustinatori/konrad.png"
+      alt="Romanian American Foundation"
+    />
+    <div class="content-text">
+      <h2>Konrad Adenauer Stiftung</h2>
+      <h4>{textTwo}</h4>
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    width: 100%;
+    background-color: #16171d;
+  }
+  .content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+  }
+  .content img {
+    width: 30em;
+    height: 30em;
+    object-fit: contain;
+  }
+  .content h2 {
+    font-size: 1.6rem;
+    margin: 0;
+    color: #fff;
+    text-align: center;
+  }
+  .content h4 {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    padding: 1em 2em 2em 2em;
+    line-height: 1.4em;
+  }
+
+  @media only screen and (min-width: 680px) {
+    .content h2 {
+      font-size: 2rem;
+    }
+    .content h4 {
+      font-size: 1.1rem;
+      line-height: 1.6em;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .content {
+      display: grid;
+      grid-template-columns: auto auto;
+      padding: 5em;
+    }
+    .container {
+      padding: 8em 8em;
+    }
+  }
+</style>

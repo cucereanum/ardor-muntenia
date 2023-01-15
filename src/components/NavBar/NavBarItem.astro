@@ -6,7 +6,12 @@ export interface Props {
   navItems?: string[];
 }
 const { id, title, navItems, page } = Astro.props;
-const checkOne = title === "Cine suntem?" && page === "viziune";
+const checkOne =
+  title === "Cine suntem?" &&
+  (page === "viziune" ||
+    page === "proiecte" ||
+    page === "echipa" ||
+    page === "sustinatori");
 ---
 
 <li class="menu-nav-item">

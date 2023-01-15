@@ -1,0 +1,49 @@
+---
+import Footer from "../components/Footer.astro";
+import Sustinatori from "../components/Sustinatori/Sustinatori.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Sustinatori" page="sustinatori">
+  <div class="body-container">
+    <Sustinatori />
+  </div>
+  <Footer changeWidth={true} />
+</Layout>
+
+<script is:inline>
+  window.scrollTo(0, 0);
+</script>
+
+<style>
+  @font-face {
+    font-family: "Poppins-Bold";
+    src: url("/fonts/Poppins-Bold.ttf") format("ttf");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Poppins-Medium";
+    src: url("/fonts/Poppins-Medium.ttf") format("ttf");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  body {
+    margin: 0;
+    font-size: 10px;
+    font-family: "Poppins-Bold", sans-serif;
+    overflow-x: hidden;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .body-container {
+      display: flex;
+      position: relative;
+      flex: 1;
+      flex-direction: row;
+      z-index: 1;
+    }
+  }
+</style>

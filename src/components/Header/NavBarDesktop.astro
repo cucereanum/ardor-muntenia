@@ -55,7 +55,11 @@ const secondNavArray = [
               </a>
             </li>
             <li class="sublink-container">
-              <a class="sublink"><h3>Sustinatori</h3></a>
+              <a
+                class={page === "sustinatori" ? "sublink-current" : "sublink"}
+                href="/sustinatori"
+                ><h3>Sustinatori</h3>
+              </a>
             </li>
             <li class="sublink-container">
               <a class="sublink"><h3>Sustine-ne</h3></a>
