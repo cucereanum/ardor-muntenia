@@ -2,10 +2,10 @@
 import { thirdSectionData } from "../../lib/homeData";
 ---
 
-<div class="home-container" id="home">
+<div class="home-container" id="home3">
   <h1 class="title">Muncești</h1>
   <h4 class="subheading">Oportunitățile tale</h4>
-  <div class="scroll-container">
+  <div class="scroll-container3">
     {
       thirdSectionData.map((secondSection, index) => {
         if (index === 1)
@@ -96,17 +96,16 @@ import { thirdSectionData } from "../../lib/homeData";
 </div>
 
 <script is:inline>
-  const home3 = document.getElementById("home");
-  home3.addEventListener("mouseover", () => {
+  const homeContainer3 = document.getElementById("home3");
+  const scrollContainer3 = document.querySelector(".scroll-container3");
+  homeContainer3.addEventListener("mouseenter", () => {
     setTimeout(() => {
-      document
-        .getElementById("box")
-        .scrollIntoView({ behavior: "instant", inline: "center" });
+      scrollContainer3.scrollTo({
+        left: scrollContainer3.scrollWidth / 2 - scrollContainer3.clientWidth / 2,
+        behavior: "smooth",
+      });
     }, 1000);
   });
-  document
-    .getElementById("box")
-    .scrollIntoView({ behavior: "instant", inline: "center" });
 </script>
 
 <style>
@@ -118,7 +117,7 @@ import { thirdSectionData } from "../../lib/homeData";
     align-items: center;
     text-align: center;
   }
-  .scroll-container {
+  .scroll-container3 {
     display: flex;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -194,15 +193,15 @@ import { thirdSectionData } from "../../lib/homeData";
     font-size: 1.1rem;
     padding-right: 0.6em;
   }
-  .scroll-container::-webkit-scrollbar {
+  .scroll-container3::-webkit-scrollbar {
     width: 12px;
   }
-  .scroll-container::-webkit-scrollbar-track {
+  .scroll-container3::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
   }
 
-  .scroll-container::-webkit-scrollbar-thumb {
+  .scroll-container3::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
     background-color: rgb(148, 148, 148);
@@ -252,7 +251,7 @@ import { thirdSectionData } from "../../lib/homeData";
     .box-container {
       display: none;
     }
-    .scroll-container {
+    .scroll-container3 {
       display: none;
     }
     .home-container:hover {
@@ -277,7 +276,7 @@ import { thirdSectionData } from "../../lib/homeData";
       animation: onDisplay 0s 1s forwards;
     }
 
-    .home-container:hover .scroll-container {
+    .home-container:hover .scroll-container3 {
       display: flex;
     }
     .home-container:hover .box-container {

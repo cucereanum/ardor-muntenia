@@ -2,13 +2,13 @@
 import { secondSectionData } from "../../lib/homeData";
 ---
 
-<div class="home-container" id="home">
+<div class="home-container" id="home2">
   <h1 class="title">Predai</h1>
   <h4 class="subheading">
     Cei mai buni profesori folosesc educația deliberativă la clasă. Intră aici
     sa afli cum poți fi printre ei
   </h4>
-  <div class="scroll-container">
+  <div class="scroll-container2">
     {
       secondSectionData.map((secondSection, index) => {
         if (index === 2)
@@ -99,17 +99,16 @@ import { secondSectionData } from "../../lib/homeData";
 </div>
 
 <script is:inline>
-  const home = document.getElementById("home");
-  home.addEventListener("mouseover", () => {
+  const homeContainer = document.getElementById("home2");
+  const scrollContainer = document.querySelector(".scroll-container2");
+  homeContainer.addEventListener("mouseenter", () => {
     setTimeout(() => {
-      document
-        .getElementById("center-box")
-        .scrollIntoView({ behavior: "instant", inline: "center" });
+      scrollContainer.scrollTo({
+        left: scrollContainer.scrollWidth / 2 - scrollContainer.clientWidth / 2,
+        behavior: "smooth",
+      });
     }, 1000);
   });
-  document
-    .getElementById("center-box")
-    .scrollIntoView({ behavior: "instant", inline: "center" });
 </script>
 
 <style>
@@ -121,7 +120,7 @@ import { secondSectionData } from "../../lib/homeData";
     align-items: center;
     text-align: center;
   }
-  .scroll-container {
+  .scroll-container2 {
     display: flex;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -197,15 +196,15 @@ import { secondSectionData } from "../../lib/homeData";
     font-size: 1.1rem;
     padding-right: 0.6em;
   }
-  .scroll-container::-webkit-scrollbar {
+  .scroll-container2::-webkit-scrollbar {
     width: 12px;
   }
-  .scroll-container::-webkit-scrollbar-track {
+  .scroll-container2::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
   }
 
-  .scroll-container::-webkit-scrollbar-thumb {
+  .scroll-container2::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
     background-color: rgb(148, 148, 148);
@@ -256,7 +255,7 @@ import { secondSectionData } from "../../lib/homeData";
     .box-container {
       display: none;
     }
-    .scroll-container {
+    .scroll-container2 {
       display: none;
     }
     .home-container:hover {
@@ -281,7 +280,7 @@ import { secondSectionData } from "../../lib/homeData";
       animation: onDisplay 0s 1s forwards;
     }
 
-    .home-container:hover .scroll-container {
+    .home-container:hover .scroll-container2 {
       display: flex;
     }
     .home-container:hover .box-container {
