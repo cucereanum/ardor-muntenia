@@ -14,7 +14,7 @@ const { title, page } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+    <link rel="icon" type="image/svg+xml" href="logo.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -23,3 +23,12 @@ const { title, page } = Astro.props;
     <slot />
   </body>
 </html>
+
+<style>
+    body {
+    margin: 0;
+    font-size: 10px;
+    font-family: "Poppins-Bold", sans-serif;
+    overflow-x: hidden;
+  }
+</style>

@@ -8,46 +8,160 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Ardor Muntenia" page="home">
   <div class="body-container">
-    <FirstSection />
-    <SecondSection />
-    <ThirdSetion />
+    <div class="text-overlay"></div>
+    <div class="gallery">
+      <img
+        id="inveti"
+        src="src/assets/images/home-section-1-desktop.png"
+        alt="image"
+      />
+      <img
+        id="predai"
+        src="src/assets/images/home-section-2-desktop.png"
+        alt="image"
+      />
+      <img
+        id="muncesti"
+        src="src/assets/images/home-section-3-desktop.png"
+        alt="image"
+      />
+    </div>
   </div>
   <Footer />
 </Layout>
 
 <script is:inline>
-  window.scrollTo(0, 0);
+  if (fetchMediaQuery()) {
+    addOverlays();
+  } else {
+    removeOverlays();
+  }
+
+  // event listener on window resize
+
+  window.addEventListener("resize", () => {
+    if (fetchMediaQuery()) {
+      addOverlays();
+    } else {
+      // TODO: this one is broken, fix it.
+      removeOverlays();
+    }
+  });
+
+  function addOverlays() {
+    addOverlay("inveti", "Invata");
+    addOverlay("predai", "Preda");
+    addOverlay("muncesti", "Muncesti");
+  }
+
+  function removeOverlays() {
+    removeOverlay("inveti");
+    removeOverlay("predai");
+    removeOverlay("muncesti");
+  }
+  function fetchMediaQuery() {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    return mediaQuery.matches;
+  }
+
+  function removeOverlay(id) {
+    const element = document.getElementById(id);
+    element.removeEventListener("mouseenter", () => {});
+    element.removeEventListener("mouseleave", () => {});
+  }
+  function addOverlay(id, text) {
+    timeout = null;
+    const element = document.getElementById(id);
+    element.addEventListener("mouseenter", () => {
+      const textOverlay = document.querySelector(".text-overlay");
+      timeout = setTimeout(() => {
+        const rect = element.getBoundingClientRect();
+        textOverlay.style.display = "block";
+        textOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+        textOverlay.style.left = rect.left + "px";
+        if (rect.top < 0) {
+          textOverlay.style.bottom = rect.bottom + "px";
+        } else {
+          textOverlay.style.top = rect.top + "px";
+        }
+        textOverlay.style.width = rect.width + "px";
+        textOverlay.style.height = rect.height + "px";
+
+        const div = document.createElement("div");
+        div.style.position = "absolute";
+        div.style.left = "50%";
+        div.style.top = "50%";
+        div.style.transform = "translate(-50%, -50%)";
+        div.style.fontSize = "50px";
+        div.style.color = "white";
+        div.innerHTML = text;
+        textOverlay.appendChild(div);
+      }, 600);
+    });
+
+    element.addEventListener("mouseleave", () => {
+      const textOverlay = document.querySelector(".text-overlay");
+      textOverlay.style.display = "none";
+      textOverlay.innerHTML = "";
+      clearTimeout(timeout);
+    });
+  }
 </script>
 
 <style>
-  @font-face {
-    font-family: "Poppins-Bold";
-    src: url("/fonts/Poppins-Bold.ttf") format("ttf");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  /* if the screen is bigger than laptop media query */
+
+  .gallery {
+    --n: 1; /* number of rows*/
+    --m: 3; /* number of columns */
+    --g: 0px; /* control the gap */
+    --f: 0.8; /* control the scale factor */
+
+    display: grid;
+    gap: var(--g);
+    width: 100vw;
+    height: 120vh;
+    grid-template-columns: repeat(var(--m), auto);
   }
-  @font-face {
-    font-family: "Poppins-Medium";
-    src: url("/fonts/Poppins-Medium.ttf") format("ttf");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+
+  .text-overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    z-index: 1;
+    pointer-events: none;
   }
-  body {
-    margin: 0;
-    font-size: 10px;
-    font-family: "Poppins-Bold", sans-serif;
-    overflow-x: hidden;
+
+  .gallery > img {
+    width: 0;
+    height: 0;
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    transition: 0.5s linear;
   }
 
   @media only screen and (min-width: 1024px) {
-    .body-container {
-      display: flex;
-      position: relative;
-      flex: 1;
-      flex-direction: row;
-      z-index: 1;
+    .gallery img:hover {
+      filter: grayscale(80%) blur(8px);
+      width: calc(80vh * var(--f) / var(--n));
+    }
+
+    .gallery:hover > img:not(:hover) {
+      filter: blur(4px);
+    }
+  }
+  /* If the screen size is smaller than laptop then disable hover and display column is 1 for grid */
+  @media only screen and (max-width: 1024px) {
+    .gallery {
+      --n: 1;
+      --m: 1;
+    }
+
+    /* images just display the top of it not the middle */
+    .gallery > img {
+      object-position: 0 20%;
     }
   }
 </style>
