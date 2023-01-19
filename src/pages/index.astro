@@ -31,20 +31,26 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <script is:inline>
+  let areOverlaysAdded = false;
   if (fetchMediaQuery()) {
+    areOverlaysAdded = true;
     addOverlays();
   } else {
     removeOverlays();
   }
 
-  // event listener on window resize
 
   window.addEventListener("resize", () => {
     if (fetchMediaQuery()) {
-      addOverlays();
+      if (!areOverlaysAdded) {
+        addOverlays();
+        areOverlaysAdded = true;
+      }
     } else {
-      // TODO: this one is broken, fix it.
-      removeOverlays();
+      if (areOverlaysAdded) {
+        removeOverlays();
+        areOverlaysAdded = false;
+      }
     }
   });
 
@@ -59,6 +65,7 @@ import Layout from "../layouts/Layout.astro";
     removeOverlay("predai");
     removeOverlay("muncesti");
   }
+
   function fetchMediaQuery() {
     const mediaQuery = window.matchMedia("(min-width: 1024px)");
     return mediaQuery.matches;
@@ -66,9 +73,9 @@ import Layout from "../layouts/Layout.astro";
 
   function removeOverlay(id) {
     const element = document.getElementById(id);
-    element.removeEventListener("mouseenter", () => {});
-    element.removeEventListener("mouseleave", () => {});
+    element.replaceWith(element.cloneNode(true));
   }
+
   function addOverlay(id, text) {
     timeout = null;
     const element = document.getElementById(id);
@@ -77,7 +84,7 @@ import Layout from "../layouts/Layout.astro";
       timeout = setTimeout(() => {
         const rect = element.getBoundingClientRect();
         textOverlay.style.display = "block";
-        textOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+        textOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
         textOverlay.style.left = rect.left + "px";
         if (rect.top < 0) {
           textOverlay.style.bottom = rect.bottom + "px";
