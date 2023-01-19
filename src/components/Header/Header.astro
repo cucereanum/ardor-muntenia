@@ -221,6 +221,7 @@ const { page } = Astro.props;
     .navbar-desktop {
       display: block;
       z-index: 101;
+      height: 8vh;
     }
     .menu {
       display: none;
@@ -248,8 +249,7 @@ const { page } = Astro.props;
 
   @media only screen and (min-width: 1160px) {
     img {
-      width: 85px;
-      height: 85px;
+      height: 100%;
       object-fit: contain;
     }
 

@@ -81,10 +81,11 @@
 
 <style>
   .home-container {
-    background-image: url("../../images/home-section-1.png");
+    background-image: url("../../images/home-section-1-desktop.png");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-    height: 80.1em;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
     text-align: center;
   }
   h1 {
@@ -152,7 +153,7 @@
       width: 75%;
     }
     .home-container {
-      background-image: url("../../images/home-section-1-tablet.png");
+      /* background-image: url("../../images/home-section-1-tablet.png"); */
     }
     h4.subheading {
       padding: 0 5em;
@@ -178,7 +179,7 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      background-image: url("../../images/home-section-1-desktop.png");
+      /* background-image: url("../../images/home-section-1-desktop.png"); */
     }
     .home-container h1 {
       display: none;
@@ -192,7 +193,8 @@
 
     .home-container:hover {
       flex-grow: 5;
-      background-image: url("../../images/home-section-1-zoom.png");
+      background-image: url("../../images/home-section-1-desktop-dark.png");
+      background-position: 0 20%;
       transition: all 1s ease-in;
     }
     .home-container:hover .title {
