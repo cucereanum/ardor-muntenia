@@ -111,11 +111,11 @@ import { thirdSectionData } from "../../lib/homeData";
 
 <style>
   .home-container {
-    background-image: url("../../images/home-section-3-desktop.png");
+    background-image: url("../../images/home-section-3-dark.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    height: 80vh;
+    /* background-position: center; */
+    height: 84em;
     align-items: center;
     text-align: center;
   }
@@ -195,19 +195,17 @@ import { thirdSectionData } from "../../lib/homeData";
     font-size: 1.1rem;
     padding-right: 0.6em;
   }
-  /* .scroll-container3::-webkit-scrollbar {
+  .scroll-container3::-webkit-scrollbar {
     width: 12px;
   }
-  .scroll-container3::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
+  .scroll-container3::-webkit-scrollbar * {
+    background: transparent;
   }
 
   .scroll-container3::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-    background-color: rgb(148, 148, 148);
-  } */
+    background: rgba(57, 55, 55, 0.8) !important;
+    border-radius: 20px;
+  }
   @media only screen and (min-width: 680px) {
     .box-content {
       width: 34em;
@@ -235,10 +233,13 @@ import { thirdSectionData } from "../../lib/homeData";
       z-index: 2;
       display: flex;
       flex: 1;
+      height: 80vh;
       position: relative;
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      background-image: url("../../images/home-section-3.png");
+      background-position: center;
     }
     .home-container h1 {
       display: none;
@@ -254,7 +255,7 @@ import { thirdSectionData } from "../../lib/homeData";
     }
     .home-container:hover {
       flex-grow: 5;
-      /* background-image: url("../../images/home-section-3-zoom.png"); */
+      background-image: url("../../images/home-section-3-dark.png");
       background-position: 0 20%;
       transition: all 1s ease-in;
     }

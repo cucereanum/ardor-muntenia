@@ -113,11 +113,10 @@ import { secondSectionData } from "../../lib/homeData";
 
 <style>
   .home-container {
-    background-image: url("../../images/home-section-2-desktop.png");
+    background-image: url("../../images/home-section-2-dark.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    height: 80vh;
+    height: 84em;
     align-items: center;
     text-align: center;
   }
@@ -198,6 +197,18 @@ import { secondSectionData } from "../../lib/homeData";
     padding-right: 0.6em;
   }
 
+  .scroll-container2::-webkit-scrollbar {
+    width: 12px;
+  }
+  .scroll-container2::-webkit-scrollbar * {
+    background: transparent;
+  }
+
+  .scroll-container2::-webkit-scrollbar-thumb {
+    background: rgba(57, 55, 55, 0.8) !important;
+    border-radius: 20px;
+  }
+
   @media only screen and (min-width: 680px) {
     .box-content {
       width: 34em;
@@ -229,7 +240,8 @@ import { secondSectionData } from "../../lib/homeData";
       position: relative;
       justify-content: center;
       overflow: hidden;
-      transition: transform 1s, filter 1.5s;
+      background-image: url("../../images/home-section-2.png");
+      background-position: center;
     }
     .home-container .title {
       display: none;
@@ -245,6 +257,7 @@ import { secondSectionData } from "../../lib/homeData";
     }
     .home-container:hover {
       flex-grow: 3.5;
+      background-image: url("../../images/home-section-2-dark.png");
       background-position: 0 20%;
       transition: all 1s ease-in;
     }
